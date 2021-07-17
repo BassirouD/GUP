@@ -1,0 +1,72 @@
+<!--<ion-header>-->
+<!--    <ion-toolbar>-->
+<!--        <ion-title>Connexion</ion-title>-->
+<!--    </ion-toolbar>-->
+<!--</ion-header>-->
+
+<ion-content>
+    <div class="divPrincipal">
+        <div>
+            <div class="element-center">
+                <ion-col>
+                    <h1 class="ion-text-center cHTitle text-white">Connexion</h1>
+
+                    <form [formGroup]="loginForm" #f="ngForm" (ngSubmit)="onLogin(f.value)">
+                        <div class="cBLarge">
+                            <div class="cWhite cBass">
+                                <br>
+                                <div color="light" class="input-group">
+                                    <ion-item lines="none" class="matItem text-white">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label class="text-white">Email</mat-label>
+                                            <input matInput formControlName="username" type="text">
+                                        </mat-form-field>
+                                    </ion-item>
+                                    <ion-item lines="none" class="matItem text-white">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label class="text-white">Mot de passe</mat-label>
+                                            <input matInput [type]="hide ? 'password' : 'text'"
+                                                   formControlName="password">
+                                            <span mat-icon-button matSuffix (click)="hide = !hide"
+                                                  [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}
+                                        </mat-icon>
+                                        </span>
+                                        </mat-form-field>
+                                    </ion-item>
+                                </div>
+                                <ion-row style="margin-left: 15px">
+                                    <ion-col>
+                                        <div routerLink="/forgot" class="text-dark cBasButton1">
+                                            <span expand="block" class="text-white">Mot de passe oublié?</span>
+                                        </div>
+                                    </ion-col>
+                                    <ion-col>
+                                        <div routerLink="/forgot" class="text-dark cBasButton1">
+                                            <span expand="block" class="text-white">Mot de passe oublié?</span>
+                                        </div>
+                                    </ion-col>
+                                </ion-row>
+
+                                <div class="cBasButton2">
+                                    <ion-button expand="block" color="monvert"
+                                                class="ion-margin-start ion-margin-end ion-margin-bottom" type="submit">
+                                        Acceder à votre compte
+                                    </ion-button>
+                                </div>
+                                <br>
+                                <div class="cBasButton2">
+                                    <ion-button expand="block" fill="outline" color="monvert"
+                                                class="ion-margin-start ion-margin-end ion-margin-bottom" type="submit">
+                                        <span class="text-white">Je n'ai pas encore de compte</span>
+                                    </ion-button>
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                    </form>
+                </ion-col>
+            </div>
+        </div>
+    </div>
+</ion-content>
