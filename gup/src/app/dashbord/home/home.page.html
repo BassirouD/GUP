@@ -1,9 +1,99 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>home</ion-title>
-  </ion-toolbar>
+<ion-header [translucent]="true" scrollEvents="true" (ionScroll)="onScroll($event)">
+    <ion-toolbar>
+        <ion-title style="font-size: 15px;">
+            Bienvenue, Bassirou Diallo
+        </ion-title>
+        <ion-buttons slot="end">
+            <ion-button>
+                <ion-icon name="notifications-outline" class="ionSizeSetting"></ion-icon>
+            </ion-button>
+            <ion-button>
+                <ion-icon name="cog-outline" class="ionSizeSetting" slot="end"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+
+    <ion-row class="sticky-row">
+        <ion-col size="10">
+            <ion-text class="ion-padding-start" color="medium"
+                      [ngClass]="{'location-visible': showLocationDetail, 'location-hidden': !showLocationDetail}">
+            </ion-text>
+            <ion-searchbar placeholder="Votre recherche ici"></ion-searchbar>
+        </ion-col>
+        <ion-col size="2">
+            <ion-button class="classButom text-black-50" fill="clear">
+                <ion-icon class="tailleIcon" name="options-outline" slot="icon-only"></ion-icon>
+            </ion-button>
+        </ion-col>
+    </ion-row>
 </ion-header>
 
+
 <ion-content>
+
+    <h3 style="margin-left: 20px;margin-top: 10px;">Widgets <br>nombre de demande</h3>
+    <ion-slides [options]="catSlideOpts">
+        <ion-slide>
+            <ion-card class="classCardTaille c1">
+                <div style="margin-top: 10px">
+                    <h5 style="font-size: 17px" class="text-white">5</h5>
+                    <h5 style="font-size: 17px" class="text-white">A traiter</h5>
+                </div>
+            </ion-card>
+        </ion-slide>
+        <ion-slide>
+            <ion-card class="classCardTaille c2">
+                <div style="margin-top: 10px">
+                    <h5 style="font-size: 17px" class="text-white">3</h5>
+                    <h5 style="font-size: 17px" class="text-white">Traitées</h5>
+                </div>
+            </ion-card>
+        </ion-slide>
+        <ion-slide>
+            <ion-card class="classCardTaille c3">
+                <div style="margin-top: 10px">
+                    <h5 style="font-size: 17px" class="text-white">2</h5>
+                    <h5 style="font-size: 17px" class="text-white">Rejetées</h5>
+                </div>
+            </ion-card>
+        </ion-slide>
+    </ion-slides>
+
+
+    <ion-card>
+        <ion-card-content *ngIf="status == 'atraiter'">
+            Je suis le contenu a traiter
+        </ion-card-content>
+
+        <ion-card-content *ngIf="status == 'traiter'">
+            Je suis le contenu traitées
+        </ion-card-content>
+
+        <ion-card-content *ngIf="status == 'arejeter'">
+            Je suis le contenu Rejetées
+        </ion-card-content>
+
+        <hr>
+        <div>
+            <ion-row style="margin-left: 30px">
+                <ion-col (click)="onATraiter()">
+                    <span style="color: grey">A traiter</span>
+                </ion-col>
+                <ion-col (click)="onTraiter()">
+                    <span style="color: green">Traitées</span>
+                </ion-col>
+                <ion-col (click)="onRejeter()">
+                    <span style="color: red">Rejetées</span>
+                </ion-col>
+            </ion-row>
+        </div>
+    </ion-card>
+
+    <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+        <ion-fab-button color="monvert" size="small">
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+
 
 </ion-content>

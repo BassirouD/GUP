@@ -1,9 +1,63 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Inscription</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
 
+    <ion-buttons>
+        <ion-back-button class="text-white" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+
+    <div class="divPrincipal">
+        <div>
+            <div class="element-center">
+                <ion-col>
+                    <h1 class="ion-text-center cHTitle text-white">Inscription</h1>
+
+                    <form>
+                        <div class="cBLarge">
+                            <div class="cBass">
+                                <br>
+                                <div color="light" class="input-group">
+                                    <ion-item lines="none" class="matItem text-white">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label class="text-white">Prenom</mat-label>
+                                            <input matInput type="text">
+                                        </mat-form-field>
+                                    </ion-item>
+                                    <ion-item lines="none" class="matItem text-white">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label class="text-white">Nom</mat-label>
+                                            <input matInput type="text">
+                                        </mat-form-field>
+                                    </ion-item>
+                                    <ion-item lines="none" class="matItem text-white">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label class="text-white">Username</mat-label>
+                                            <input matInput type="text">
+                                        </mat-form-field>
+                                    </ion-item>
+                                    <ion-item lines="none" class="matItem text-white">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label class="text-white">Téléphone</mat-label>
+                                            <input matInput type="text">
+                                        </mat-form-field>
+                                    </ion-item>
+                                    <ion-item lines="none" class="matItem text-white">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label class="text-white">Email</mat-label>
+                                            <input matInput type="text">
+                                        </mat-form-field>
+                                    </ion-item>
+                                </div>
+
+                                <div style="margin-right: 10px">
+                                    <ion-button expand="block" color="monvert"
+                                                class="ion-margin-start ion-margin-end ion-margin-bottom" type="submit">
+                                        Valider l'inscription
+                                    </ion-button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </ion-col>
+            </div>
+        </div>
+    </div>
 </ion-content>

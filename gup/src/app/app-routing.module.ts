@@ -17,6 +17,10 @@ const routes: Routes = [
   {
     path: 'change-password',
     loadChildren: () => import('./authPages/change-password/change-password.module').then( m => m.ChangePasswordPageModule)
+  },
+  {
+    path: 'demande-enlevement',
+    loadChildren: () => import('./dashbord/demande-enlevement/demande-enlevement.module').then( m => m.DemandeEnlevementPageModule)
   }
 ];
 @NgModule({

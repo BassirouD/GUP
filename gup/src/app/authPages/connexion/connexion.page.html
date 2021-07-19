@@ -13,7 +13,7 @@
 
                     <form [formGroup]="loginForm" #f="ngForm" (ngSubmit)="onLogin(f.value)">
                         <div class="cBLarge">
-                            <div class="cWhite cBass">
+                            <div class="cBass">
                                 <br>
                                 <div color="light" class="input-group">
                                     <ion-item lines="none" class="matItem text-white">
@@ -37,27 +37,27 @@
                                 </div>
                                 <ion-row style="margin-left: 15px">
                                     <ion-col>
-                                        <div routerLink="/forgot" class="text-dark cBasButton1">
+                                        <div routerLink="/forgot" class="text-dark">
                                             <span expand="block" class="text-white">Mot de passe oublié?</span>
                                         </div>
                                     </ion-col>
-                                    <ion-col>
-                                        <div routerLink="/forgot" class="text-dark cBasButton1">
-                                            <span expand="block" class="text-white">Mot de passe oublié?</span>
+                                    <ion-col style="margin-right: 10px">
+                                        <div routerLink="/change-password" class="text-dark">
+                                            <span expand="block" class="text-white">Modifier le mot de passe?</span>
                                         </div>
                                     </ion-col>
                                 </ion-row>
 
-                                <div class="cBasButton2">
+                                <div style="margin-right: 10px">
                                     <ion-button expand="block" color="monvert"
                                                 class="ion-margin-start ion-margin-end ion-margin-bottom" type="submit">
                                         Acceder à votre compte
                                     </ion-button>
                                 </div>
                                 <br>
-                                <div class="cBasButton2">
-                                    <ion-button expand="block" fill="outline" color="monvert"
-                                                class="ion-margin-start ion-margin-end ion-margin-bottom" type="submit">
+                                <div style="margin-right: 10px">
+                                    <ion-button expand="block" fill="outline" color="monvert" (click)="onInscription()"
+                                                class="ion-margin-start ion-margin-end ion-margin-bottom">
                                         <span class="text-white">Je n'ai pas encore de compte</span>
                                     </ion-button>
                                 </div>

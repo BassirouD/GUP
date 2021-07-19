@@ -1,5 +1,8 @@
 {
   "name": "gup",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
   "type": "angular"
 }

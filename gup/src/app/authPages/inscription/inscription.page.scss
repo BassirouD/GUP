@@ -1,0 +1,54 @@
+.divPrincipal{
+    margin-top: 50px;
+}
+
+::ng-deep .mat-form-field-flex > .mat-form-field-infix { padding: 0.4em 0px !important;}
+::ng-deep .mat-form-field-label-wrapper { top: -1.5em; }
+
+::ng-deep .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+    transform: translateY(-1.1em) scale(.75);
+    width: 150.33333%;
+}
+
+
+.cBLarge{
+    width: auto;
+    //background: #f5f6f9;
+    //--background: url('https://images.unsplash.com/photo-1536431311719-398b6704d4cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1234&q=80') 0 0/100% 100% no-repeat;
+
+}
+
+ion-content {
+    //--padding-top: 40%;
+    //--padding-start: 10%;
+    //--padding-end: 10%;
+    --background: url('https://images.unsplash.com/photo-1536431311719-398b6704d4cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1234&q=80') 0 0/100% 100% no-repeat;
+}
+
+mat-form-field {
+    width: 1000px;
+    height: 60px;
+    margin-right: 10px;
+}
+
+.matItem{
+    --background:rgba(0,0,0,0.4);
+    //--background: url('https://images.unsplash.com/photo-1536431311719-398b6704d4cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1234&q=80') 0 0/100% 100% no-repeat;
+}
+
+//.mat-form-field-appearance-outline .mat-form-field-outline {
+//    color: white;
+//}
+//
+//
+//// mat-icon-stepper selected color change
+//::ng-deep .mat-step-header .mat-step-icon-selected, .mat-step-header .mat-step-icon-state-done, .mat-step-header .mat-step-icon-state-edit {
+//    background-color: white!important;
+//}
+
+//input outline color
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: white!important;
+    // opacity: 1!important;
+}
+
