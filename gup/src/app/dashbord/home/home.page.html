@@ -5,10 +5,10 @@
         </ion-title>
         <ion-buttons slot="end">
             <ion-button>
-                <ion-icon name="notifications-outline" class="ionSizeSetting"></ion-icon>
+                <ion-icon name="notifications-outline" class="ionSizeSetting text-black-50"></ion-icon>
             </ion-button>
             <ion-button>
-                <ion-icon name="cog-outline" class="ionSizeSetting" slot="end"></ion-icon>
+                <ion-icon name="cog-outline" class="ionSizeSetting text-black-50" slot="end"></ion-icon>
             </ion-button>
         </ion-buttons>
     </ion-toolbar>
@@ -90,10 +90,9 @@
     </ion-card>
 
     <ion-fab horizontal="end" vertical="bottom" slot="fixed">
-        <ion-fab-button color="monvert" size="small">
+        <ion-fab-button color="monvert" size="small" (click)="openDemande()">
             <ion-icon name="add"></ion-icon>
         </ion-fab-button>
     </ion-fab>
-
 
 </ion-content>

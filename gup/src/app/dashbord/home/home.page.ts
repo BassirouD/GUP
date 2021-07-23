@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
     selector: 'app-home',
@@ -10,7 +11,7 @@ export class HomePage implements OnInit {
     showLocationDetail = false;
     status: string = 'atraiter'
 
-    constructor() {
+    constructor(private router: Router) {
     }
 
     ngOnInit() {
@@ -49,5 +50,8 @@ export class HomePage implements OnInit {
         this.status = 'arejeter'
     }
 
+    openDemande(){
+        this.router.navigate(['/demande-enlevement'])
+    }
 
 }

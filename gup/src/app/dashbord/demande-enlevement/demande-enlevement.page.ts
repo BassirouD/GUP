@@ -1,15 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-demande-enlevement',
-  templateUrl: './demande-enlevement.page.html',
-  styleUrls: ['./demande-enlevement.page.scss'],
+    selector: 'app-demande-enlevement',
+    templateUrl: './demande-enlevement.page.html',
+    styleUrls: ['./demande-enlevement.page.scss'],
 })
 export class DemandeEnlevementPage implements OnInit {
 
-  constructor() { }
+    progress = 0;
+    n = 1;
 
-  ngOnInit() {
-  }
+    constructor() {
+    }
+
+    ngOnInit() {
+    }
+
+    onSuivant(){
+        this.n += 1;
+    }
+
+    onPrecedent(){
+        this.n -= 1;
+    }
 
 }

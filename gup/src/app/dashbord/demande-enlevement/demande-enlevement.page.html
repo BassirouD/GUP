@@ -1,9 +1,305 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>demande-enlevement</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>Demande d'enlévement</ion-title>
+        <ion-back-button class="text-black-50" slot="start" defaultHref="/tabs/home"></ion-back-button>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+    <h1 style="margin-left: 15px; margin-top: 10px" *ngIf="n == 1">Informations <br>du transitaire</h1>
+    <h1 style="margin-left: 15px; margin-top: 10px" *ngIf="n == 2">Informations <br>du bénéficiaire</h1>
+    <h1 style="margin-left: 15px; margin-top: 10px" *ngIf="n == 3">Informations <br>du navire</h1>
+    <h1 style="margin-left: 15px; margin-top: 10px" *ngIf="n == 4">Informations <br>de conteneur</h1>
+    <h1 style="margin-left: 15px; margin-top: 10px" *ngIf="n == 5">Informations <br>du consignataire</h1>
+    <h1 style="margin-left: 15px; margin-top: 10px" *ngIf="n == 6">Informations <br>de l'expéditeur</h1>
+    <h1 style="margin-left: 15px; margin-top: 10px" *ngIf="n == 7">Informations <br>du manutentionnaire</h1>
+    <h1 style="margin-left: 15px; margin-top: 10px" *ngIf="n == 8">Ensemble des<br>docs nécessaires</h1>
+
+
+    <div class="text-right" style="margin-right: 30px">
+        <p>{{n}}/8</p>
+    </div>
+
+    <form>
+        <div style="margin-right: 13px" *ngIf="n == 1">
+            <ion-item lines="none">
+                <mat-form-field appearance="outline">
+                    <mat-label>Prénom</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+            </ion-item>
+            <ion-item lines="none">
+                <mat-form-field appearance="outline">
+                    <mat-label>Nom</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+            </ion-item>
+            <ion-item lines="none">
+                <mat-form-field appearance="outline">
+                    <mat-label>Adresse</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+            </ion-item>
+            <ion-item lines="none">
+                <mat-form-field appearance="outline">
+                    <mat-label>Telephone</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+            </ion-item>
+            <ion-item lines="none">
+                <mat-form-field appearance="outline">
+                    <mat-label>Téléphone</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+            </ion-item>
+            <ion-item lines="none">
+                <mat-form-field appearance="outline">
+                    <mat-label>E-mail</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+            </ion-item>
+            <ion-item lines="none">
+                <mat-form-field appearance="outline">
+                    <mat-label>Code PPM</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+            </ion-item>
+            <ion-item lines="none">
+                <mat-form-field appearance="outline">
+                    <mat-label>N° BEAD</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+            </ion-item>
+            <ion-item lines="none">
+                <mat-form-field appearance="outline">
+                    <mat-label>Résime</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+            </ion-item>
+            <ion-item lines="none">
+                <mat-form-field appearance="outline">
+                    <mat-label>N° Connaissement</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+            </ion-item>
+            <ion-item lines="none">
+                <mat-form-field appearance="outline">
+                    <mat-label>N° manifeste Gainde</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+            </ion-item>
+            <ion-item lines="none">
+                <mat-form-field appearance="outline">
+                    <mat-label>Nom de la structure</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+            </ion-item>
+        </div>
+
+
+        <div style="margin-right: 13px" *ngIf="n == 2">
+            <ion-item lines="none">
+                <mat-form-field appearance="outline">
+                    <mat-label>Prénom</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+            </ion-item>
+            <ion-item lines="none">
+                <mat-form-field appearance="outline">
+                    <mat-label>Nom</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+            </ion-item>
+            <ion-item lines="none">
+                <mat-form-field appearance="outline">
+                    <mat-label>Adresse</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+            </ion-item>
+        </div>
+
+        <div style="margin-right: 13px" *ngIf="n == 3">
+            <ion-item lines="none">
+                <mat-form-field appearance="outline">
+                    <mat-label>Nom du navire</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+            </ion-item>
+            <ion-item lines="none">
+                <mat-form-field appearance="outline">
+                    <mat-label>Port</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+            </ion-item>
+            <ion-item lines="none">
+                <mat-form-field appearance="outline">
+                    <mat-label>N° voyage</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+            </ion-item>
+            <ion-item lines="none">
+                <mat-form-field appearance="outline">
+                    <mat-label>Date d'arrivée</mat-label>
+                    <input matInput type="date">
+                </mat-form-field>
+            </ion-item>
+            <ion-item lines="none">
+                <mat-form-field appearance="outline">
+                    <mat-label>Nom complet du bénéficiaire</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+            </ion-item>
+            <ion-item lines="none">
+                <mat-form-field appearance="outline">
+                    <mat-label>Nature du marchandise</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+            </ion-item>
+        </div>
+
+        <div style="margin-right: 13px" *ngIf="n == 4">
+            <ion-item lines="none">
+                <mat-form-field appearance="fill">
+                    <mat-label>Type de conteneur</mat-label>
+                    <mat-select>
+                        <mat-option value="type1">Type1</mat-option>
+                        <mat-option value="type2">Type2</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </ion-item>
+            <ion-item lines="none">
+                <mat-form-field appearance="outline">
+                    <mat-label>Longueur du conteneur</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+            </ion-item>
+            <ion-item lines="none">
+                <mat-form-field appearance="outline">
+                    <mat-label>Largeur du conteneur</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+            </ion-item>
+        </div>
+
+        <div style="margin-right: 13px" *ngIf="n == 5">
+            <ion-item lines="none">
+                <mat-form-field appearance="outline">
+                    <mat-label>Nom du consignataire</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+            </ion-item>
+            <ion-item lines="none">
+                <mat-form-field appearance="outline">
+                    <mat-label>Téléphone du consignataire</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+            </ion-item>
+            <ion-item lines="none">
+                <mat-form-field appearance="outline">
+                    <mat-label>Adresse du consignataire</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+            </ion-item>
+        </div>
+
+        <div style="margin-right: 13px" *ngIf="n == 6">
+            <ion-item lines="none">
+                <mat-form-field appearance="outline">
+                    <mat-label>Nom de l'expéditeur</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+            </ion-item>
+            <ion-item lines="none">
+                <mat-form-field appearance="outline">
+                    <mat-label>Téléphone de l'expéditeur</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+            </ion-item>
+            <ion-item lines="none">
+                <mat-form-field appearance="outline">
+                    <mat-label>Adresse de l'expéditeur</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+            </ion-item>
+            <ion-item lines="none">
+                <mat-form-field appearance="outline">
+                    <mat-label>Fax de l'expéditeur</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+            </ion-item>
+            <ion-item lines="none">
+                <mat-form-field appearance="outline">
+                    <mat-label>Texte explicatif</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+            </ion-item>
+        </div>
+
+        <div style="margin-right: 13px" *ngIf="n == 7">
+            <ion-item lines="none">
+                <mat-form-field appearance="outline">
+                    <mat-label>Nom du manutentionnaire</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+            </ion-item>
+            <ion-item lines="none">
+                <mat-form-field appearance="outline">
+                    <mat-label>Téléphone du manutentionnaire</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+            </ion-item>
+            <ion-item lines="none">
+                <mat-form-field appearance="outline">
+                    <mat-label>Adresse du manutentionnaire</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+            </ion-item>
+        </div>
+
+        <div style="margin-right: 13px" *ngIf="n == 8">
+            <ion-item lines="none">
+                <mat-form-field appearance="outline">
+                    <mat-label>Bon à livrer compagnie</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+            </ion-item>
+            <ion-item lines="none">
+                <mat-form-field appearance="outline">
+                    <mat-label>Fichier Pad</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+            </ion-item>
+            <ion-item lines="none">
+                <mat-form-field appearance="outline">
+                    <mat-label>Bon manutentionnaire</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+            </ion-item>
+            <ion-item lines="none">
+                <mat-form-field appearance="outline">
+                    <mat-label>Bon à charger transport</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+            </ion-item>
+        </div>
+
+        <div *ngIf="n >= 2" style="margin-left: 8px;">
+            <ion-row>
+                <ion-col>
+                    <ion-button (click)="onPrecedent()" fill="outline" style="width: 140px" color="monvert">Précédent
+                    </ion-button>
+                </ion-col>
+                <ion-col>
+                    <ion-button (click)=" onSuivant()" style="width: 140px" color="monvert">Suivant</ion-button>
+                </ion-col>
+            </ion-row>
+        </div>
+
+
+        <ion-button *ngIf="n == 1" (click)="onSuivant()" expand="block" color="monvert"
+                    style="margin-left: 16px;margin-right: 22px">Suivant
+        </ion-button>
+    </form>
 
 </ion-content>

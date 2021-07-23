@@ -21,7 +21,7 @@ const routes: Routes = [
   {
     path: 'demande-enlevement',
     loadChildren: () => import('./dashbord/demande-enlevement/demande-enlevement.module').then( m => m.DemandeEnlevementPageModule)
-  }
+  },
 ];
 @NgModule({
   imports: [

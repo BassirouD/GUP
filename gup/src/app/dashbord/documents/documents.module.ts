@@ -25,7 +25,7 @@ import {MatIconModule} from "@angular/material/icon";
         MatDialogModule,
         MatFormFieldModule,
     ],
-    declarations: [DocumentsPage]
+    declarations: [DocumentsPage],
 })
 export class DocumentsPageModule {
 }
