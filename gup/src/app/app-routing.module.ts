@@ -21,7 +21,11 @@ const routes: Routes = [
   {
     path: 'demande-enlevement',
     loadChildren: () => import('./dashbord/demande-enlevement/demande-enlevement.module').then( m => m.DemandeEnlevementPageModule)
+  },  {
+    path: 'change-profil',
+    loadChildren: () => import('./authPages/change-profil/change-profil.module').then( m => m.ChangeProfilPageModule)
   },
+
 ];
 @NgModule({
   imports: [
