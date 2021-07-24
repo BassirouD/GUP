@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {IonRouterOutlet, ModalController} from "@ionic/angular";
 import {SuiviComponent} from "../../modals/suivi/suivi.component";
+import {DevisComponent} from "../../modals/devis/devis.component";
+import {PayerComponent} from "../../modals/payer/payer.component";
 
 @Component({
     selector: 'app-documents',
@@ -39,8 +41,8 @@ export class DocumentsPage implements OnInit {
 
     async devisModal() {
         const modal = await this.modalController.create({
-            component: SuiviComponent,
-            cssClass: 'my-custom-class',
+            component: DevisComponent,
+            cssClass: 'cal-modal',
             swipeToClose: true,
             presentingElement: this.routerOutlet.nativeEl,
             // presentingElement: await this.modalController.getTop() // Get the top-most ion-modal
@@ -49,12 +51,24 @@ export class DocumentsPage implements OnInit {
         return await modal.present();
     }
 
-    suivisModal(){
-
+    async suivisModal(){
+        const modal = await this.modalController.create({
+            component: SuiviComponent,
+            cssClass: 'cal-modal',
+            swipeToClose: true,
+            presentingElement: this.routerOutlet.nativeEl,
+        });
+        return await modal.present();
     }
 
-    payerModal(){
-
+    async payerModal(){
+        const modal = await this.modalController.create({
+            component: PayerComponent,
+            cssClass: 'cal-modal',
+            swipeToClose: true,
+            presentingElement: this.routerOutlet.nativeEl,
+        });
+        return await modal.present();
     }
 
     visuModal(){

@@ -1,7 +1,7 @@
 <ion-header>
-    <ion-toolbar>
+    <ion-toolbar color="myblue">
         <ion-title>Demande d'enlévement</ion-title>
-        <ion-back-button class="text-black-50" slot="start" defaultHref="/tabs/home"></ion-back-button>
+        <ion-back-button class="text-white" slot="start" defaultHref="/tabs/home"></ion-back-button>
     </ion-toolbar>
 </ion-header>
 
@@ -284,21 +284,20 @@
             </ion-item>
         </div>
 
-        <div *ngIf="n >= 2" style="margin-left: 8px;">
+        <div *ngIf="n >= 2" style="margin-left: 8px;margin-right: 5px">
             <ion-row>
                 <ion-col>
-                    <ion-button (click)="onPrecedent()" fill="outline" style="width: 140px" color="monvert">Précédent
+                    <ion-button (click)="onPrecedent()" fill="outline" style="width: 140px" color="myblue">Précédent
                     </ion-button>
                 </ion-col>
                 <ion-col>
-                    <ion-button (click)=" onSuivant()" style="width: 140px" color="monvert">Suivant</ion-button>
+                    <ion-button (click)=" onSuivant()" style="width: 140px" color="myblue">Suivant</ion-button>
                 </ion-col>
             </ion-row>
         </div>
 
-
-        <ion-button *ngIf="n == 1" (click)="onSuivant()" expand="block" color="monvert"
-                    style="margin-left: 16px;margin-right: 22px">Suivant
+        <ion-button *ngIf="n == 1" (click)="onSuivant()" expand="block" color="myblue"
+                    style="margin-left: 16px;margin-right: 30px">Suivant
         </ion-button>
     </form>
 

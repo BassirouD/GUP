@@ -24,3 +24,28 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+:root {
+    --ion-color-myblue: #0400ff;
+    --ion-color-myblue-rgb: 4,0,255;
+    --ion-color-myblue-contrast: #ffffff;
+    --ion-color-myblue-contrast-rgb: 255,255,255;
+    --ion-color-myblue-shade: #0400e0;
+    --ion-color-myblue-tint: #1d1aff;
+}
+
+.ion-color-myblue {
+    --ion-color-base: var(--ion-color-myblue);
+    --ion-color-base-rgb: var(--ion-color-myblue-rgb);
+    --ion-color-contrast: var(--ion-color-myblue-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-myblue-contrast-rgb);
+    --ion-color-shade: var(--ion-color-myblue-shade);
+    --ion-color-tint: var(--ion-color-myblue-tint);
+}
+
+.cal-modal{
+    --height: 90%;
+    --border-radius: 10px;
+    padding: 25px;
+}
