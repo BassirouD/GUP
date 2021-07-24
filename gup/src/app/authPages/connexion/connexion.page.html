@@ -11,7 +11,7 @@
                 <ion-col>
                     <h1 class="ion-text-center cHTitle text-white">Connexion</h1>
 
-                    <form [formGroup]="loginForm" #f="ngForm" (ngSubmit)="onLogin(f.value)">
+                    <form id="form" #f="ngForm" (ngSubmit)="login(f.value)">
                         <div class="cBLarge">
                             <div class="cBass">
                                 <br>
@@ -19,14 +19,14 @@
                                     <ion-item lines="none" class="matItem text-white">
                                         <mat-form-field appearance="outline">
                                             <mat-label class="text-white">Email</mat-label>
-                                            <input matInput formControlName="username" type="text">
+                                            <input matInput [(ngModel)]="loadData.login" type="text" name="login">
                                         </mat-form-field>
                                     </ion-item>
                                     <ion-item lines="none" class="matItem text-white">
                                         <mat-form-field appearance="outline">
                                             <mat-label class="text-white">Mot de passe</mat-label>
                                             <input matInput [type]="hide ? 'password' : 'text'"
-                                                   formControlName="password">
+                                                   [(ngModel)]="loadData.motdepasse" name="motdepasse">
                                             <span mat-icon-button matSuffix (click)="hide = !hide"
                                                   [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                                             <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}
@@ -35,33 +35,35 @@
                                         </mat-form-field>
                                     </ion-item>
                                 </div>
-                                <ion-row style="margin-left: 15px;font-size: 13px">
-                                    <ion-col>
-                                        <div routerLink="/forgot" class="text-dark">
-                                            <span expand="block" class="text-white">Mot de passe oublié?</span>
-                                        </div>
-                                    </ion-col>
-                                    <ion-col style="margin-right: 10px">
-                                        <div routerLink="/change-password" class="text-dark">
-                                            <span expand="block" class="text-white">Modifier le mot de passe?</span>
-                                        </div>
-                                    </ion-col>
-                                </ion-row>
+                                <div class="backBlack">
+                                    <ion-row style="margin-left: 15px;font-size: 13px">
+                                        <ion-col>
+                                            <div routerLink="/forgot" class="text-dark">
+                                                <span expand="block" class="text-white">Mot de passe oublié?</span>
+                                            </div>
+                                        </ion-col>
+                                        <ion-col style="margin-right: 10px">
+                                            <div routerLink="/change-password" class="text-dark">
+                                                <span expand="block" class="text-white">Modifier le mot de passe?</span>
+                                            </div>
+                                        </ion-col>
+                                    </ion-row>
 
-                                <div style="margin-right: 10px">
-                                    <ion-button expand="block" color="myblue"
-                                                class="ion-margin-start ion-margin-end ion-margin-bottom" type="submit">
-                                        Acceder à votre compte
-                                    </ion-button>
+                                    <div style="margin-right: 10px">
+                                        <ion-button expand="block" color="myblue"
+                                                    class="ion-margin-start ion-margin-end ion-margin-bottom" type="submit">
+                                            Acceder à votre compte
+                                        </ion-button>
+                                    </div>
+                                    <br>
+                                    <div style="margin-right: 10px">
+                                        <ion-button expand="block" fill="outline" color="myblue" (click)="onInscription()"
+                                                    class="ion-margin-start ion-margin-end ion-margin-bottom">
+                                            <span class="text-white">Je n'ai pas encore de compte</span>
+                                        </ion-button>
+                                    </div>
+                                    <br>
                                 </div>
-                                <br>
-                                <div style="margin-right: 10px">
-                                    <ion-button expand="block" fill="outline" color="myblue" (click)="onInscription()"
-                                                class="ion-margin-start ion-margin-end ion-margin-bottom">
-                                        <span class="text-white">Je n'ai pas encore de compte</span>
-                                    </ion-button>
-                                </div>
-                                <br>
                             </div>
                         </div>
                     </form>

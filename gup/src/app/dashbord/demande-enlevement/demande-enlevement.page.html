@@ -284,14 +284,14 @@
             </ion-item>
         </div>
 
-        <div *ngIf="n >= 2" style="margin-left: 8px;margin-right: 5px">
+        <div *ngIf="n >= 2" style="margin-left: 13px;margin-right: 5px">
             <ion-row>
                 <ion-col>
-                    <ion-button (click)="onPrecedent()" fill="outline" style="width: 140px" color="myblue">Précédent
+                    <ion-button (click)="onPrecedent()" fill="outline" style="width: 150px" color="myblue">Précédent
                     </ion-button>
                 </ion-col>
-                <ion-col>
-                    <ion-button (click)=" onSuivant()" style="width: 140px" color="myblue">Suivant</ion-button>
+                <ion-col class="text-right">
+                    <ion-button (click)=" onSuivant()" style="width: 150px;margin-right: 15px" color="myblue">Suivant</ion-button>
                 </ion-col>
             </ion-row>
         </div>
