@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
     selector: 'app-profile',
@@ -9,7 +10,7 @@ export class ProfilePage implements OnInit {
 
     showLocationDetail = false;
 
-    constructor() {
+    constructor(private router:Router) {
     }
 
     ngOnInit() {
@@ -24,6 +25,20 @@ export class ProfilePage implements OnInit {
         setTimeout(() => {
             event.target.complete();
         }, 2000);
+    }
+
+    logOut(){
+        localStorage.removeItem('annee');
+        localStorage.removeItem('periode');
+        this.router.navigateByUrl('/');
+    }
+
+    goToChangePassword(){
+        this.router.navigateByUrl('/change-password');
+    }
+
+    goToChangeProfil(){
+        this.router.navigateByUrl('/change-profil');
     }
 
 }

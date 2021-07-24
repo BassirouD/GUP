@@ -106,3 +106,52 @@ ion-refresher {
     width: 24px;
     height: 24px;
 }
+
+
+.cAvatar{
+    position: relative;
+}
+
+.cImage{
+    position: absolute;
+}
+
+
+.cIcone{
+    margin-bottom: 20px;
+    margin-top: 50px;
+    background-color: white;
+    border-radius: 5px;
+    margin-left: 60px;
+}
+
+ion-avatar{
+    width: 80px;
+    height: 70px;
+}
+
+.my-custom-class .alert-wrapper {
+    background: #e5e5e5;
+}
+
+.cName{
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.ionTitleGauche{
+    float: left;
+}
+
+//ion-icon{
+//    margin-left: 60px;
+//    margin-top: 0px;
+//    margin-bottom: 10px;
+//}
+
+.classCard{
+    height: 25px;
+    width: auto;
+    border-radius: 10px;
+}
+

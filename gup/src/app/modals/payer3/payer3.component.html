@@ -1,9 +1,9 @@
 <ion-content>
 
 
-    <h2 class="text-center">Payer via <span style="color: #00BCD4;">Visa</span></h2>
+    <h2 style="margin-top: 50px" class="text-center">Payer via <span style="color: #00BCD4;">Visa</span></h2>
 
-    <div style="margin-top: 50px">
+    <div>
         <div style="margin-left: 15px;border: 1px solid black;margin-right: 10px">
             <ion-row>
                 <ion-col size="8">
@@ -54,6 +54,24 @@
     <br>
 
     <hr style="margin-right: 30px;margin-left: 30px;background: #00BCD4">
+
+    <div>
+        <ion-item lines="none">
+            <ion-input placeholder="N° de la carte" type="text"></ion-input>
+        </ion-item>
+        <ion-item lines="none">
+            <ion-input placeholder="Date d'expiration" type="date"></ion-input>
+        </ion-item>
+        <ion-item lines="none">
+            <ion-input placeholder="CVV" type="text"></ion-input>
+        </ion-item>
+        <ion-item lines="none">
+            <ion-input placeholder="786533556" type="text" disabled></ion-input>
+        </ion-item>
+
+        <ion-button expand="block" color="myblue" style="margin-right: 15px;margin-left: 15px">Payer la somme de x fcfa</ion-button>
+
+    </div>
 
 
 </ion-content>
