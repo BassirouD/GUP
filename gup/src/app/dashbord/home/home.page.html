@@ -78,6 +78,12 @@
 
         <hr>
         <div>
+            <ion-card>
+                <ion-card-header></ion-card-header>
+                <ion-card-content>
+                    <div [chart]="chartOptions" style="width:80%; height:390px;margin:auto;"></div>
+                </ion-card-content>
+            </ion-card>
             <ion-row style="margin-left: 30px">
                 <ion-col (click)="onATraiter()">
                     <span style="color: grey">A traiter</span>

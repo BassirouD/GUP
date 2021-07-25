@@ -12,7 +12,7 @@ import {AuthService} from "../../services/auth.service";
 export class ConnexionPage implements OnInit {
 
     hide = true;
-    loadData={login:'',motdepasse:''}
+    loadData={login:'user',motdepasse:'passer123'}
     constructor(private formbuilder: FormBuilder,
                 public loadingController:LoadingController,
                 public router:Router,
