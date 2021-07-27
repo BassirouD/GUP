@@ -1,14 +1,14 @@
 <ion-content>
     <div style="margin-top: 30px;margin-left: 10px">
         <ion-row>
-            <ion-col><h4><b>Devis de Adama Yade</b></h4></ion-col>
+            <ion-col><h4><b>Devis de {{document.prenom}} {{document.nom}}</b></h4></ion-col>
             <ion-col>
             <span>
                 N° Dossier
             </span>
                 <br>
                 <span style="color: #00ACFF">
-                    205
+                    {{document.id}}
                 </span>
             </ion-col>
             <ion-col>
@@ -26,7 +26,7 @@
                 <div style="background: #e7e7e7; border-radius: 5px" class="text-center">
                     <ion-icon name="person-outline"></ion-icon>
                     <br>
-                    <span><b>Aliou</b></span>
+                    <span><b>{{document.prenom}}</b></span>
                 </div>
             </ion-col>
             <ion-col>
@@ -34,7 +34,7 @@
                     <ion-icon name="home-outline"></ion-icon>
                     <br>
                     <span>
-                        <b>Liberté 1</b>
+                        <b>{{document.adresse}}</b>
                     </span>
                 </div>
             </ion-col>
@@ -44,7 +44,7 @@
                     <br>
                     <span>
                         <b>
-                            77552333
+                            {{document.telephone}}
                         </b>
                     </span>
                 </div>
@@ -54,96 +54,123 @@
         <br>
 
         <ion-row>
-            <ion-col>
-                <b>Libellé</b>
+            <ion-col size="4">
+                <b style="font-size: 13px">Libellé</b>
             </ion-col>
-            <ion-col>
-                <b>Devis pole</b>
+            <ion-col size="3">
+                <b style="font-size: 13px">Devis pole</b>
             </ion-col>
-            <ion-col>
-                <b>Devis Gainde</b>
-            </ion-col>
-        </ion-row>
-
-        <ion-row>
-            <ion-col>
-                <span>Bon à déliver <br>Compagnie</span>
-            </ion-col>
-            <ion-col>
-                <span>75000</span>
-            </ion-col>
-            <ion-col>
-                <span>10000</span>
+            <ion-col size="5">
+                <b style="font-size: 13px">Frais opérateur</b>
             </ion-col>
         </ion-row>
 
-        <ion-row>
-            <ion-col>
-                <span>Visa PAD</span>
-            </ion-col>
-            <ion-col>
-                <span>15000</span>
-            </ion-col>
-            <ion-col>
-                <span>2000</span>
-            </ion-col>
-        </ion-row>
+        <div style="background: #e7e7e7; margin-right: 7px; border-radius: 10px">
+            <ion-row>
+                <ion-col size="5">
+                    <span>Bon à déliver <br>Compagnie</span>
+                </ion-col>
+                <ion-col size="3">
+                    <span>75000</span>
+                </ion-col>
+                <ion-col size="3">
+                    <span>10000</span>
+                </ion-col>
+            </ion-row>
+        </div>
 
-        <ion-row>
-            <ion-col>
-                <span>Bon à déliver <br>manutentionnaire</span>
-            </ion-col>
-            <ion-col>
-                <span>75000</span>
-            </ion-col>
-            <ion-col>
-                <span>10000</span>
-            </ion-col>
-        </ion-row>
+        <p></p>
 
-        <ion-row>
-            <ion-col>
-                <span>Bon sortie <br>douane</span>
-            </ion-col>
-            <ion-col>
-                <span>75000</span>
-            </ion-col>
-            <ion-col>
-                <span>10000</span>
-            </ion-col>
-        </ion-row>
+        <div style="background: #e7e7e7; margin-right: 7px; border-radius: 10px">
+            <ion-row>
+                <ion-col size="5">
+                    <span>Visa PAD</span>
+                </ion-col>
+                <ion-col size="3">
+                    <span>15000</span>
+                </ion-col>
+                <ion-col size="3">
+                    <span>2000</span>
+                </ion-col>
+            </ion-row>
+        </div>
+        <p></p>
+        <div style="background: #e7e7e7; margin-right: 7px; border-radius: 10px">
+            <ion-row>
+                <ion-col size="5">
+                    <span>Bon à déliver <br>manutentionnaire</span>
+                </ion-col>
+                <ion-col size="3">
+                    <span>75000</span>
+                </ion-col>
+                <ion-col size="3">
+                    <span>10000</span>
+                </ion-col>
+            </ion-row>
+        </div>
 
-        <ion-row>
-            <ion-col>
-                <span><b>TVA</b></span>
-            </ion-col>
-            <ion-col>
-                <span>18%</span>
-            </ion-col>
-            <ion-col>
+        <p></p>
 
-            </ion-col>
-        </ion-row>
+        <div style="background: #e7e7e7; margin-right: 7px; border-radius: 10px">
+            <ion-row>
+                <ion-col size="5">
+                    <span>Bon sortie <br>douane</span>
+                </ion-col>
+                <ion-col size="3">
+                    <span>75000</span>
+                </ion-col>
+                <ion-col size="3">
+                    <span>10000</span>
+                </ion-col>
+            </ion-row>
+        </div>
 
-        <ion-row>
-            <ion-col>
-                <span><b>Totaux</b></span>
-            </ion-col>
-            <ion-col>
-                <span>852215</span>
-            </ion-col>
-            <ion-col>
-                <span>235222</span>
-            </ion-col>
-        </ion-row>
+        <p></p>
 
-        <ion-row>
-            <ion-col>
-                <span><b>Total net a payer</b></span>
-            </ion-col>
-            <ion-col>
-                <span><b>852215</b></span>
-            </ion-col>
-        </ion-row>
+        <div style="background: #e7e7e7; margin-right: 7px; border-radius: 10px">
+            <ion-row>
+                <ion-col size="5">
+                    <span><b>TVA</b></span>
+                </ion-col>
+                <ion-col>
+                    <span>18%</span>
+                </ion-col>
+                <ion-col >
+
+                </ion-col>
+            </ion-row>
+        </div>
+
+        <p></p>
+
+        <div style="background: #e7e7e7; margin-right: 7px; border-radius: 10px">
+            <ion-row>
+                <ion-col size="5">
+                    <span><b>Totaux</b></span>
+                </ion-col>
+                <ion-col size="3">
+                    <span>852215</span>
+                </ion-col>
+                <ion-col size="3">
+                    <span>235222</span>
+                </ion-col>
+            </ion-row>
+
+        </div>
+        <p></p>
+
+        <div style="background: #e7e7e7; margin-right: 7px; border-radius: 10px">
+            <ion-row>
+                <ion-col>
+                    <span><b>Total net a payer</b></span>
+                </ion-col>
+                <ion-col>
+                    <span><b>852215</b></span>
+                </ion-col>
+            </ion-row>
+        </div>
+
     </div>
+
+    <br>
 </ion-content>

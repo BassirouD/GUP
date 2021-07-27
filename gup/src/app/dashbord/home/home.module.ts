@@ -8,6 +8,10 @@ import {HomePageRoutingModule} from './home-routing.module';
 
 import {HomePage} from './home.page';
 import {ChartModule} from 'angular-highcharts';
+import {MatIconModule} from "@angular/material/icon";
+import {MatMenuModule} from "@angular/material/menu";
+import {MatDialogModule} from "@angular/material/dialog";
+import {MatFormFieldModule} from "@angular/material/form-field";
 
 
 @NgModule({
@@ -16,7 +20,12 @@ import {ChartModule} from 'angular-highcharts';
         FormsModule,
         IonicModule,
         HomePageRoutingModule,
-        ChartModule
+        ChartModule,
+        MatMenuModule,
+        MatMenuModule,
+        MatIconModule,
+        MatDialogModule,
+        MatFormFieldModule,
     ],
     declarations: [HomePage]
 })

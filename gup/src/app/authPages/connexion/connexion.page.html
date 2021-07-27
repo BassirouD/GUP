@@ -11,7 +11,7 @@
                 <ion-col>
                     <h1 class="ion-text-center cHTitle text-white">Connexion</h1>
 
-                    <form id="form" #f="ngForm" (ngSubmit)="login(f.value)">
+                    <form [formGroup]="loginForm" #f="ngForm" (ngSubmit)="Login(f.value)">
                         <div class="cBLarge">
                             <div class="cBass">
                                 <br>
@@ -19,14 +19,13 @@
                                     <ion-item lines="none" class="matItem text-white">
                                         <mat-form-field appearance="outline">
                                             <mat-label class="text-white">Email</mat-label>
-                                            <input matInput [(ngModel)]="loadData.login" type="text" name="login">
+                                            <input matInput formControlName="username" type="text">
                                         </mat-form-field>
                                     </ion-item>
                                     <ion-item lines="none" class="matItem text-white">
                                         <mat-form-field appearance="outline">
                                             <mat-label class="text-white">Mot de passe</mat-label>
-                                            <input matInput [type]="hide ? 'password' : 'text'"
-                                                   [(ngModel)]="loadData.motdepasse" name="motdepasse">
+                                            <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
                                             <span mat-icon-button matSuffix (click)="hide = !hide"
                                                   [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                                             <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}

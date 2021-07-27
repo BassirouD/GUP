@@ -1,7 +1,7 @@
 <ion-header [translucent]="true" scrollEvents="true" (ionScroll)="onScroll($event)">
     <ion-toolbar color="myblue">
         <ion-title style="font-size: 15px;">
-            Bienvenue, Bassirou Diallo
+            Bienvenue, Pape Fall
         </ion-title>
         <ion-buttons slot="end">
             <ion-button class="text-white">
@@ -34,74 +34,108 @@
 
 <ion-content>
 
-    <h3 style="margin-left: 20px;margin-top: 10px;">Widgets <br>nombre de demande</h3>
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+    <h2 style="margin-left: 20px;margin-top: 10px;">Widgets <br>nombre de demandes</h2>
     <ion-slides [options]="catSlideOpts">
         <ion-slide>
             <ion-card class="classCardTaille c1">
                 <div style="margin-top: 10px">
-                    <h5 style="font-size: 17px" class="text-white">5</h5>
-                    <h5 style="font-size: 17px" class="text-white">A traiter</h5>
+                    <h5 style="font-size: 17px;color: black">0{{aTraiter}}</h5>
+                    <h5 style="font-size: 17px;color: black">A traiter</h5>
                 </div>
             </ion-card>
         </ion-slide>
         <ion-slide>
             <ion-card class="classCardTaille c2">
                 <div style="margin-top: 10px">
-                    <h5 style="font-size: 17px" class="text-white">3</h5>
-                    <h5 style="font-size: 17px" class="text-white">Traitées</h5>
+                    <h5 style="font-size: 17px;color: black">3</h5>
+                    <h5 style="font-size: 17px;color: black">Traitées</h5>
                 </div>
             </ion-card>
         </ion-slide>
         <ion-slide>
             <ion-card class="classCardTaille c3">
                 <div style="margin-top: 10px">
-                    <h5 style="font-size: 17px" class="text-white">2</h5>
-                    <h5 style="font-size: 17px" class="text-white">Rejetées</h5>
+                    <h5 style="font-size: 17px;color: black">2</h5>
+                    <h5 style="font-size: 17px;color: black">Rejetées</h5>
                 </div>
             </ion-card>
         </ion-slide>
     </ion-slides>
 
 
-    <ion-card>
-        <ion-card-content *ngIf="status == 'atraiter'">
-            Je suis le contenu a traiter
-        </ion-card-content>
-
-        <ion-card-content *ngIf="status == 'traiter'">
-            Je suis le contenu traitées
-        </ion-card-content>
-
-        <ion-card-content *ngIf="status == 'arejeter'">
-            Je suis le contenu Rejetées
-        </ion-card-content>
-
-        <hr>
-        <div>
-            <ion-card>
-                <ion-card-header></ion-card-header>
-                <ion-card-content>
-                    <div [chart]="chartOptions" style="width:80%; height:390px;margin:auto;"></div>
-                </ion-card-content>
-            </ion-card>
-            <ion-row style="margin-left: 30px">
-                <ion-col (click)="onATraiter()">
-                    <span style="color: grey">A traiter</span>
-                </ion-col>
-                <ion-col (click)="onTraiter()">
-                    <span style="color: green">Traitées</span>
-                </ion-col>
-                <ion-col (click)="onRejeter()">
-                    <span style="color: red">Rejetées</span>
-                </ion-col>
-            </ion-row>
-        </div>
-    </ion-card>
+<!--    <div>-->
+<!--        <ion-card>-->
+<!--            <ion-card-header></ion-card-header>-->
+<!--            <ion-card-content>-->
+<!--                <div [chart]="chartOptions" style="width:80%; height:390px;margin:auto;"></div>-->
+<!--            </ion-card-content>-->
+<!--        </ion-card>-->
+<!--        <ion-row style="margin-left: 30px">-->
+<!--            <ion-col (click)="onATraiter()">-->
+<!--                <span style="color: grey">A traiter</span>-->
+<!--            </ion-col>-->
+<!--            <ion-col (click)="onTraiter()">-->
+<!--                <span style="color: green">Traitées</span>-->
+<!--            </ion-col>-->
+<!--            <ion-col (click)="onRejeter()">-->
+<!--                <span style="color: red">Rejetées</span>-->
+<!--            </ion-col>-->
+<!--        </ion-row>-->
+<!--    </div>-->
 
     <ion-fab horizontal="end" vertical="bottom" slot="fixed">
         <ion-fab-button color="myblue" size="small" (click)="openDemande()">
             <ion-icon name="add"></ion-icon>
         </ion-fab-button>
     </ion-fab>
+
+
+    <ion-list>
+        <ion-item size="12" *ngFor="let doc of documents">
+            <ion-col size="6">
+                <p>
+                    <span>{{doc.prenom}} {{doc.nom}}</span>
+                </p>
+                <p>
+                    <span>{{doc.id}}</span>
+                </p>
+            </ion-col>
+            <ion-col size="3">
+                <span style="color: green; font-size: 12px">Payer a 100%</span>
+            </ion-col>
+
+            <ion-col size="2" style="margin-left: auto">
+                <button  style="border-radius: 15px" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                    <mat-icon>more_horiz</mat-icon>
+                </button>
+            </ion-col>
+
+
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="payerModal(doc)">
+                    <span>Payer</span>
+                </button>
+                <button mat-menu-item (click)="suivisModal(doc)">
+                    <span>Suivre</span>
+                </button>
+<!--                <button mat-menu-item (click)="visuModal(doc)">-->
+<!--                    <span>Visuliser</span>-->
+<!--                </button>-->
+                <button mat-menu-item (click)="devisModal(doc)">
+                    <span>Devis</span>
+                </button>
+                <button mat-menu-item>
+                    <span>Supprimer</span>
+                </button>
+            </mat-menu>
+
+        </ion-item>
+    </ion-list>
+
+
 
 </ion-content>

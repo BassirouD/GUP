@@ -1,14 +1,14 @@
 <ion-content>
     <div style="margin-top: 30px;margin-left: 10px">
         <ion-row>
-            <ion-col><h4><b>Devis de Adama Yade</b></h4></ion-col>
+            <ion-col><h4><b>Devis de <br>{{document.prenom}} {{document.nom}}</b></h4></ion-col>
             <ion-col>
             <span>
                 N° Dossier
             </span>
                 <br>
                 <span style="color: #00ACFF">
-                    205
+                    {{document.id}}
                 </span>
             </ion-col>
             <ion-col>
@@ -26,7 +26,7 @@
                 <div style="background: #e7e7e7; border-radius: 5px" class="text-center">
                     <ion-icon name="person-outline"></ion-icon>
                     <br>
-                    <span><b>Aliou</b></span>
+                    <span><b>{{document.prenom}}</b></span>
                 </div>
             </ion-col>
             <ion-col>
@@ -34,7 +34,7 @@
                     <ion-icon name="home-outline"></ion-icon>
                     <br>
                     <span>
-                        <b>Liberté 1</b>
+                        <b>{{document.adresse}}</b>
                     </span>
                 </div>
             </ion-col>
@@ -44,7 +44,7 @@
                     <br>
                     <span>
                         <b>
-                            77552333
+                            {{document.telephone}}
                         </b>
                     </span>
                 </div>

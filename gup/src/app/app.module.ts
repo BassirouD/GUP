@@ -15,6 +15,8 @@ import {MatInputModule} from "@angular/material/input";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatSelectModule} from "@angular/material/select";
 import {ChartModule} from "angular-highcharts";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
+import {Interceptor} from "./interceptor/interceptor";
 
 @NgModule({
     declarations: [AppComponent],
@@ -30,10 +32,15 @@ import {ChartModule} from "angular-highcharts";
         MatInputModule,
         ReactiveFormsModule,
         MatSelectModule,
-        ChartModule
+        ChartModule,
+        HttpClientModule
     ],
     exports: [ChartModule],
-    providers: [{provide: RouteReuseStrategy, useClass: IonicRouteStrategy}],
+    providers: [
+        {provide: RouteReuseStrategy, useClass: IonicRouteStrategy},
+        { provide: HTTP_INTERCEPTORS, useClass: Interceptor, multi: true },
+
+    ],
     bootstrap: [AppComponent],
 })
 export class AppModule {

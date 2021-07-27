@@ -1,7 +1,7 @@
 <ion-header [translucent]="true" scrollEvents="true" (ionScroll)="onScroll($event)">
     <ion-toolbar color="myblue">
         <ion-title style="font-size: 15px;">
-            Bienvenue, Bassirou Diallo
+            Bienvenue, Pape Fall
         </ion-title>
         <ion-buttons slot="end">
             <ion-button class="text-white">
@@ -33,98 +33,123 @@
 
 <ion-content>
     <ion-list>
-        <ion-item size="12">
+
+        <ion-item size="12" *ngFor="let doc of documents">
             <ion-col size="6">
                 <p>
-                    <span>Omar Diop</span>
+                    <span>{{doc.prenom}} {{doc.nom}}</span>
                 </p>
                 <p>
-                    <span>152</span>
+                    <span>{{doc.id}}</span>
                 </p>
             </ion-col>
             <ion-col size="3">
-                <span>statut a ...</span>
+                <span style="color: green; font-size: 12px">Payer a 100%</span>
             </ion-col>
+
             <ion-col size="2" style="margin-left: auto">
                 <button  style="border-radius: 15px" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
                     <mat-icon>more_horiz</mat-icon>
                 </button>
             </ion-col>
-        </ion-item>
 
-        <ion-item size="12">
-            <ion-col size="6">
-                <p>
-                    <span>Omar Diop</span>
-                </p>
-                <p>
-                    <span>152</span>
-                </p>
-            </ion-col>
-            <ion-col size="3">
-                <span>statut a ...</span>
-            </ion-col>
-            <ion-col size="2" style="margin-left: auto">
-                <button  style="border-radius: 15px" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-                    <mat-icon>more_horiz</mat-icon>
+
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="payerModal(doc)">
+                    <span>Payer</span>
                 </button>
-            </ion-col>
-        </ion-item>
-
-        <ion-item size="12">
-            <ion-col size="6">
-                <p>
-                    <span>Omar Diop</span>
-                </p>
-                <p>
-                    <span>152</span>
-                </p>
-            </ion-col>
-            <ion-col size="3">
-                <span>statut a ...</span>
-            </ion-col>
-            <ion-col size="2" style="margin-left: auto">
-                <button  style="border-radius: 15px" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-                    <mat-icon>more_horiz</mat-icon>
+                <button mat-menu-item (click)="suivisModal(doc)">
+                    <span>Suivre</span>
                 </button>
-            </ion-col>
-        </ion-item>
-
-        <ion-item size="12">
-            <ion-col size="6">
-                <p>
-                    <span>Omar Diop</span>
-                </p>
-                <p>
-                    <span>152</span>
-                </p>
-            </ion-col>
-            <ion-col size="3">
-                <span>statut a ...</span>
-            </ion-col>
-            <ion-col size="2" style="margin-left: auto">
-                <button  style="border-radius: 15px" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-                    <mat-icon>more_horiz</mat-icon>
+<!--                <button mat-menu-item (click)="visuModal(doc)">-->
+<!--                    <span>Visuliser</span>-->
+<!--                </button>-->
+                <button mat-menu-item (click)="devisModal(doc)">
+                    <span>Devis</span>
                 </button>
-            </ion-col>
+                <button mat-menu-item>
+                    <span>Supprimer</span>
+                </button>
+            </mat-menu>
+
         </ion-item>
 
-        <mat-menu #menu="matMenu">
-            <button mat-menu-item (click)="payerModal()">
-                <span>Payer</span>
-            </button>
-            <button mat-menu-item (click)="suivisModal()">
-                <span>Suivre</span>
-            </button>
-            <button mat-menu-item (click)="visuModal()">
-                <span>Visuliser</span>
-            </button>
-            <button mat-menu-item (click)="devisModal()">
-                <span>Devis</span>
-            </button>
-            <button mat-menu-item>
-                <span>Supprimer</span>
-            </button>
-        </mat-menu>
+
+<!--        <ion-item size="12">-->
+<!--            <ion-col size="6">-->
+<!--                <p>-->
+<!--                    <span>Omar Diop</span>-->
+<!--                </p>-->
+<!--                <p>-->
+<!--                    <span>152</span>-->
+<!--                </p>-->
+<!--            </ion-col>-->
+<!--            <ion-col size="3">-->
+<!--                <span style="color: green; font-size: 12px">Payer a 100%</span>-->
+<!--            </ion-col>-->
+<!--            <ion-col size="2" style="margin-left: auto">-->
+<!--                <button  style="border-radius: 15px" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">-->
+<!--                    <mat-icon>more_horiz</mat-icon>-->
+<!--                </button>-->
+<!--            </ion-col>-->
+<!--        </ion-item>-->
+
+<!--        <ion-item size="12">-->
+<!--            <ion-col size="6">-->
+<!--                <p>-->
+<!--                    <span>Omar Diop</span>-->
+<!--                </p>-->
+<!--                <p>-->
+<!--                    <span>152</span>-->
+<!--                </p>-->
+<!--            </ion-col>-->
+<!--            <ion-col size="3">-->
+<!--                <span style="color: green;font-size: 12px">Validée</span>-->
+<!--            </ion-col>-->
+<!--            <ion-col size="2" style="margin-left: auto">-->
+<!--                <button  style="border-radius: 15px" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">-->
+<!--                    <mat-icon>more_horiz</mat-icon>-->
+<!--                </button>-->
+<!--            </ion-col>-->
+<!--        </ion-item>-->
+
+<!--        <ion-item size="12">-->
+<!--            <ion-col size="6">-->
+<!--                <p>-->
+<!--                    <span>Omar Diop</span>-->
+<!--                </p>-->
+<!--                <p>-->
+<!--                    <span>152</span>-->
+<!--                </p>-->
+<!--            </ion-col>-->
+<!--            <ion-col size="3">-->
+<!--                <span style="color: red;font-size: 12px">Rejetée</span>-->
+<!--            </ion-col>-->
+<!--            <ion-col size="2" style="margin-left: auto">-->
+<!--                <button  style="border-radius: 15px" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">-->
+<!--                    <mat-icon>more_horiz</mat-icon>-->
+<!--                </button>-->
+<!--            </ion-col>-->
+<!--        </ion-item>-->
+
+<!--        <ion-item size="12">-->
+<!--            <ion-col size="6">-->
+<!--                <p>-->
+<!--                    <span>Omar Diop</span>-->
+<!--                </p>-->
+<!--                <p>-->
+<!--                    <span>152</span>-->
+<!--                </p>-->
+<!--            </ion-col>-->
+<!--            <ion-col size="3">-->
+<!--                <span style="color: orange; font-size: 12px">Payer a 75%</span>-->
+<!--            </ion-col>-->
+<!--            <ion-col size="2" style="margin-left: auto">-->
+<!--                <button  style="border-radius: 15px" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">-->
+<!--                    <mat-icon>more_horiz</mat-icon>-->
+<!--                </button>-->
+<!--            </ion-col>-->
+<!--        </ion-item>-->
+
     </ion-list>
 </ion-content>

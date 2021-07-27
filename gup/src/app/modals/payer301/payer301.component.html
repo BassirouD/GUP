@@ -1,5 +1,9 @@
 <ion-content>
-    <div style="margin-top: 50px">
+
+
+    <h2 style="margin-top: 50px" class="text-center">Payer via <span style="color: darkorange;">Orange Money</span></h2>
+
+    <div>
         <div style="margin-left: 15px;border: 1px solid black;margin-right: 10px">
             <ion-row>
                 <ion-col size="8">
@@ -49,23 +53,24 @@
 
     <br>
 
-    <h4 class="text-center">Veillez choisir votre moyen de paiment</h4>
+    <hr style="margin-right: 30px;margin-left: 30px;background: #00BCD4">
 
-    <ion-row>
-        <ion-col (click)="openPayer301()">
-            <ion-card class="text-center text-white">
-                <img style="height: 52px;" src="assets/images/om.png">
-            </ion-card>
-        </ion-col>
-        <ion-col (click)="openPayer302()">
-            <ion-card class="text-center text-white">
-                <img style="height: 52px;" src="assets/images/wave3.png">
-            </ion-card>
-        </ion-col>
-        <ion-col (click)="openPayer3()">
-            <ion-card>
-                <img style="height: 52px;" src="assets/images/vm.png">
-            </ion-card>
-        </ion-col>
-    </ion-row>
+    <div>
+        <ion-item lines="none">
+            <ion-input placeholder="N° de la carte" type="text"></ion-input>
+        </ion-item>
+        <ion-item lines="none">
+            <ion-input placeholder="Date d'expiration" type="date"></ion-input>
+        </ion-item>
+        <ion-item lines="none">
+            <ion-input placeholder="CVV" type="text"></ion-input>
+        </ion-item>
+        <ion-item lines="none">
+            <ion-input placeholder="786533556" type="text" disabled></ion-input>
+        </ion-item>
+
+        <ion-button expand="block" color="myblue" style="margin-right: 15px;margin-left: 15px">Payer la somme de x fcfa</ion-button>
+
+    </div>
+
 </ion-content>

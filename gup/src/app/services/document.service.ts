@@ -51,6 +51,7 @@ export class DocumentService {
     ]
 
 
+    hostgup = environment.api
     constructor(private http: HttpClient) {
     }
 
@@ -64,5 +65,13 @@ export class DocumentService {
             donner = document
         }
         return donner
+    }
+
+    getOwnerDocument(owner): any{
+        return this.http.get(this.hostgup + 'creationdossier/list/' +owner);
+    }
+
+    getTotalDemandeCreate(id: number){
+        return this.http.get(this.hostgup + 'creationdossier/totaldemandecreatepartransitaire/' + id);
     }
 }

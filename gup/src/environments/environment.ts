@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+    production: false,
+    api: 'http://41.208.149.77:8080/gupbackend/',
+    // api: 'http://192.168.2.152:8080/gupbackend/'
 };
 
 /*

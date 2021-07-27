@@ -1,14 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-suivi',
-  templateUrl: './suivi.component.html',
-  styleUrls: ['./suivi.component.scss'],
+    selector: 'app-suivi',
+    templateUrl: './suivi.component.html',
+    styleUrls: ['./suivi.component.scss'],
 })
 export class SuiviComponent implements OnInit {
 
-  constructor() { }
+    @Input() document: any;
 
-  ngOnInit() {}
+    constructor() {
+    }
+
+    ngOnInit() {
+    }
 
 }

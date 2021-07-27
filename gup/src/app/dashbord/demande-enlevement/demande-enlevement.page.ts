@@ -17,7 +17,9 @@ export class DemandeEnlevementPage implements OnInit {
     }
 
     onSuivant(){
-        this.n += 1;
+        if (this.n < 8){
+            this.n += 1;
+        }
     }
 
     onPrecedent(){
